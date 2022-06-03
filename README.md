@@ -2,4 +2,5 @@
 
 Calculadora desenvolvida com Python e Tkinter.
 
-![Captura de Tela (27)](https://user-images.githubusercontent.com/93879420/171786632-ddf7fb40-df01-4d5b-aab3-be23b90e6134.png)
+
+![Captura de Tela (30)](https://user-images.githubusercontent.com/93879420/171786833-03cd0e86-8cbe-44dc-9c5e-b98f4c6fc10a.png)

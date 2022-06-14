@@ -1,7 +1,9 @@
 from tkinter import *
+import random
 
 # build ui
 janela = Tk()
+janela.title('By Mauro')
 janela.configure(background="#3e3e3e", borderwidth="3", height="200", pady="30")
 janela.configure(relief="ridge", takefocus=False, width="200")
 janela.geometry("235x370")
@@ -29,13 +31,39 @@ def limpar_tela():
     global todos_valores
     todos_valores = ''
     valor_texto.set('')
+
+#Função Resetar Cor atual
+def reset_cor_atual():
+    cor_reset_corpo = ["#3e3e3e"]
+    cor_reset_button = ["#b3b3ff"]
+    cor_reset_button1 =["#e2e2e2"]
+    reset_cor_atual = frame_corpo["bg"]= janela["bg"]= label_marca["bg"]= cor_reset_corpo
+    reset_cor_button = bt4["bg"]=bt5["bg"]=bt6["bg"]=bt8["bg"]=bt9["bg"]=bt10["bg"]=bt12["bg"]=bt13["bg"]=bt14["bg"]=bt16["bg"]=bt17["bg"]= cor_reset_button
+    reset_cor_button1 = bt2["bg"]=bt3["bg"]=bt7["bg"]=bt11["bg"]=bt15["bg"]= cor_reset_button1
+   
+
+
+#Função de cores aleatórias
+def cores1():
+    cor = ["#"+''.join([random.choice('0123456789abcdef')for j in range(6)])]
+    cor_frame = frame_corpo["bg"]= janela["bg"] =label_marca["bg"]= cor
+
+def cores2():
+    cor1 = ["#"+''.join([random.choice('0123456789abcdef')for j in range(6)])]
+    cor1_button = bt4["bg"]=bt5["bg"]=bt6["bg"]=bt8["bg"]=bt9["bg"]=bt10["bg"]=bt12["bg"]=bt13["bg"]=bt14["bg"]=bt16["bg"]=bt17["bg"]= cor1
+
+def cores3():
+    cor2 = ["#"+''.join([random.choice('0123456789abcdef')for j in range(6)])]
+    cor2_button = bt2["bg"]=bt3["bg"]=bt7["bg"]=bt11["bg"]=bt15["bg"]= cor2
+
        
 frame_tela = Frame(janela)
-janela.title('By Mauro')
 frame_tela.configure(background="#cbebea", borderwidth="4", height="60", relief="sunken")
 frame_tela.configure(width="218")
 frame_tela.pack(side="top")
 frame_corpo = Frame(janela, container="false")
+frame_corpo.configure(bg="#3e3e3e", height="260", width="220")
+frame_corpo.place(anchor="nw", x="7", y="77")
 valor_texto = StringVar()
 label = Label(frame_tela, textvariable=valor_texto)
 label.configure(anchor="e", background="#cbebea", font="{Ebrima} 16 {}", height="2")
@@ -192,8 +220,65 @@ bt16.configure(
 bt16.configure(foreground="#000000", height="2", overrelief="groove", text="0")
 bt16.configure(width="13")
 bt16.place(anchor="nw", rely="0.80", x="1", y="0")
-frame_corpo.configure(background="#3e3e3e", height="260", width="220")
-frame_corpo.place(anchor="nw", x="7", y="77")
+cor1_button = Button(janela, command=cores1)
+cor1_button.configure(foreground="#000000", activebackground="#ff9224",
+            anchor="center",
+            background="#ff9224",
+            font="device", justify="center", overrelief="groove", relief="raised", text="C1")
+cor1_button.place(
+            anchor="nw", 
+            height="14", 
+            relx="0.0", 
+            rely="-0.09", 
+            width="23", 
+            x="5", 
+            y="5")
+cor2_button = Button(janela, command=cores2)
+cor2_button.configure(
+            activebackground="#ff9224",
+            anchor="center",
+            background="#ff9224",
+            font="device")
+cor2_button.configure(foreground="#000000", overrelief="groove", relief="raised", text="C2")
+cor2_button.place(
+            anchor="nw",
+            height="14",
+            relx="0.13",
+            rely="-0.09",
+            width="23",
+            x="4",
+            y="5")
+cor3_button = Button(janela,command= cores3)
+cor3_button.configure(
+            activebackground="#ff9224",
+            anchor="center",
+            background="#ff9224",
+            font="device")
+cor3_button.configure(foreground="#000000", overrelief="groove", relief="raised", text="C3")
+cor3_button.place(
+            anchor="nw",
+            height="14",
+            relx="0.26",
+            rely="-0.09",
+            width="23",
+            x="5",
+            y="5")
+cor4_button = Button(janela,command= reset_cor_atual)
+cor4_button.configure(
+            activebackground="#ff9224",
+            anchor="center",
+            background="#ff9224",
+            font="device")
+cor4_button.configure(foreground="#000000", overrelief="groove", relief="raised", text="R")
+cor4_button.place(
+            anchor="nw",
+            height="14",
+            relx="0.39",
+            rely="-0.09",
+            width="23",
+            x="5",
+            y="5")
+
 label_marca = Label(janela)
 label_marca.configure(
             anchor="w",
@@ -206,9 +291,9 @@ label_marca.place(
             relheight="0.05",
             relwidth="0.18",
             relx="0.56",
-            rely="-0.08",
+            rely="-0.07",
             width="55",
             x="1",
-            y="0")
+            y="-1")
 
 janela.mainloop()
